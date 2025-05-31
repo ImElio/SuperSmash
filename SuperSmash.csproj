@@ -1,0 +1,584 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{97CF2840-6163-4B8E-B066-7057C4E8734C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SuperSmash</RootNamespace>
+    <AssemblyName>SuperSmash</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="src\MainMod.cs" />
+    <Compile Include="src\Patches\Patch_DestroyFragmentsInBounds.cs" />
+    <Compile Include="src\Patches\Patch_SmashInfo_GetBounds.cs" />
+    <Compile Include="src\Patches\Patch_WallSmashingHelper_SmashBuilding.cs" />
+    <Compile Include="src\Preferences.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppAD_FimpAnimating">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppAD_FimpAnimating.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppAD_FimpGeneratorsShared">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppAD_FimpGeneratorsShared.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppAD_FimpoPropertyAttr">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppAD_FimpoPropertyAttr.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppAD_FimpShared">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppAD_FimpShared.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppAD_FimpSharedTools">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppAD_FimpSharedTools.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppBehaviorDesigner.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppBehaviorDesigner.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppCinemachine">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppCinemachine.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.Epic.OnlineServices">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppcom.Epic.OnlineServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.playeveryware.eos.core">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppcom.playeveryware.eos.core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.thenakeddev.fsr.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppcom.thenakeddev.fsr.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppcom.thenakeddev.fsr.Runtime.HDRP">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppcom.thenakeddev.fsr.Runtime.HDRP.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppDOTween">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppDOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppDOTween.Modules">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppDOTween.Modules.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppDOTweenPro">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppDOTweenPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppDOTweenPro.Scripts">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppDOTweenPro.Scripts.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.AssetMapping">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.AssetMapping.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.CHWUI">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.CHWUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.ExecutorFramework">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.ExecutorFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.FuzzySearch">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.FuzzySearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.HouseFlipper2">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.HouseFlipper2.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.StorageAPI">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.StorageAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.StorageAPI.Microsoft">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.StorageAPI.Microsoft.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.StorageAPI.PC">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.StorageAPI.PC.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.StuffOnFire">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.StuffOnFire.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppEmpyrean.TagServerClient">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppEmpyrean.TagServerClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppFacepunch.Steamworks.Win64">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppFacepunch.Steamworks.Win64.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppFMODUnity">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppFMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppFMODUnityResonance">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppFMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppGDKSettings">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppGDKSettings.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppHBAO.HighDefinition.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppHBAO.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppHime.Redist">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppHime.Redist.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInk-Libraries">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppInk-Libraries.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Common">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Generator">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\Il2CppInterop.Generator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.HarmonySupport">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\Il2CppInterop.HarmonySupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppInterop.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppKarambolo.Common">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppKarambolo.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppKarambolo.PO">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppKarambolo.PO.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppkcp2k">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppkcp2k.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppLoggingFramework">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppLoggingFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMemoryPack.Core">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMemoryPack.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMirror">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMirror.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMirror.BouncyCastle.Cryptography">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMirror.BouncyCastle.Cryptography.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMirror.Transports">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMirror.Transports.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppModio.Platform.Steam.Facepunch">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppModio.Platform.Steam.Facepunch.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppModio.Platform.Steam.Steamworks">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppModio.Platform.Steam.Steamworks.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmodio.UnityPlugin">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppmodio.UnityPlugin.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMono.Posix">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMono.Posix.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppMono.Security">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppMono.Security.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cppmscorlib">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cppmscorlib.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppNewtonsoft.Json">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppNewtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppOokii.Dialogs">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppOokii.Dialogs.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppPathCreator">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppPathCreator.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppPhoton3Unity3D">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppPhoton3Unity3D.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppPhotonChat">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppPhotonChat.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppPhotonRealtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppPhotonRealtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppRenderHeads.AVProMovieCapture.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppRenderHeads.AVProMovieCapture.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppRootMotion">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppRootMotion.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSimpleWebTransport">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSimpleWebTransport.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSirenix.OdinInspector.Attributes">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppStandaloneFileBrowser">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppStandaloneFileBrowser.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Collections.Immutable">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Configuration">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Core">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Data">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Design">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2CppSystem.Drawing">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2CppSystem.Drawing.dll</HintPath>
+    </Reference>
+    <Reference Include="Il2Cpp__Generated">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Il2Cpp__Generated.dll</HintPath>
+    </Reference>
+    <Reference Include="MelonLoader">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\net6\MelonLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Burst.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Burst.Unsafe">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Burst.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Collections.LowLevel.ILSupport">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem, Version=1.11.2.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem.ForUI">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.InputSystem.ForUI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem.Recorder, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.InputSystem.Recorder.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Mathematics, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Mathematics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Microsoft.GDK, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Microsoft.GDK.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Microsoft.GDK.Tools">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Microsoft.GDK.Tools.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Postprocessing.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Postprocessing.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.Core.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.Core.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Config.Runtime">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.HighDefinition.Config.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.RenderPipelines.HighDefinition.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.RenderPipelines.HighDefinition.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Analytics, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Configuration">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Configuration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Device">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Device.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Environments.Internal">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Environments.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Internal, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Internal.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Registration">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Registration.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Scheduler">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Scheduler.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Telemetry">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Telemetry.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Services.Core.Threading">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Services.Core.Threading.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Timeline, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.Timeline.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualEffectGraph.Runtime, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\Unity.VisualEffectGraph.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AccessibilityModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AccessibilityModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AndroidJNIModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AndroidJNIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ARModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ARModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClothModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ContentLoadModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ContentLoadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CrashReportingModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.CrashReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DirectorModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.DirectorModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.DSPGraphModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.DSPGraphModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GameCenterModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.GameCenterModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GIModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.GIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.GridModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.GridModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.HotReloadModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.HotReloadModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputLegacyModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.InputLegacyModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.JSONSerializeModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.JSONSerializeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.LocalizationModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.LocalizationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.NVIDIAModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.NVIDIAModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PerformanceReportingModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.PerformanceReportingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.Physics2DModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.Physics2DModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ProfilerModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ProfilerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PropertiesModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.PropertiesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ScreenCaptureModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.ScreenCaptureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SharedInternalsModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.SharedInternalsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteMaskModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteMaskModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SpriteShapeModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.SpriteShapeModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.StreamingModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.StreamingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubstanceModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.SubstanceModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.SubsystemsModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.SubsystemsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TerrainPhysicsModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TerrainPhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreFontEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreFontEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextCoreTextEngineModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TextCoreTextEngineModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TilemapModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TilemapModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TLSModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.TLSModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIElementsModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UIElementsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UmbraModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UmbraModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsCommonModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsCommonModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityAnalyticsModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityAnalyticsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityConnectModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityConnectModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityCurlModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityCurlModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityTestProtocolModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityTestProtocolModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAssetBundleModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestAudioModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestAudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestTextureModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestTextureModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UnityWebRequestWWWModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.UnityWebRequestWWWModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VehiclesModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.VehiclesModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VFXModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.VFXModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VideoModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.VideoModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.VRModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.VRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.WindModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.WindModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.XRModule">
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityEngine.XRModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityFx.Outline, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\SteamLibrary\steamapps\common\House Flipper 2\MelonLoader\Il2CppAssemblies\UnityFx.Outline.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
